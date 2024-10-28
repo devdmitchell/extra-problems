@@ -10,19 +10,47 @@ function isLong(str) {
   return str.length >= 15;
 }
 
-function exclaim() {
+function exclaim(str) {
+  if (str.charAt(str.length - 1) === '!') {
+      while (str.charAt(str.length - 1) === '!') {
+          str = str.slice(0, -1);
+      }
+      return str + '!';
+  } else {
+      return str + '!'; 
+  }
 }
 
-function countWords() {
+function countWords(str) {
+  if (!str) return 0; 
+  return str.trim().split(/\s+/).length; 
 }
 
-function containsDigit() {
+function containsDigit(str) {
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] >= '0' && str[i] <= '9') {
+          return true; 
+      }
+  }
+  return false; 
 }
 
-function containsLowerCase() {
+function containsLowerCase(str) {
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] >= 'a' && str[i] <= 'z') {
+          return true; 
+      }
+  }
+  return false; 
 }
 
-function containsUpperCase() {
+function containsUpperCase(str) {
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] >= 'A' && str[i] <= 'Z') {
+          return true; 
+      }
+  }
+  return false; 
 }
 
 function containsNonAlphanumeric() {
